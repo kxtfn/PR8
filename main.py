@@ -112,7 +112,7 @@ def append_fourth_student():  # Іващенко Нікіта
             f.write(next_question)
             f.write("---\n")
 
-        print("Питання четвертого студента успішно передані у файл.")
+        print("Відповідь та питання четвертого студента успішно передані у файл.")
 
     except (OSError, PermissionError) as e:
         print(f"Attention!: Помилка запису тексту у файл '{filename}'. {e}")
