@@ -1,15 +1,20 @@
-def main(): # Аксьонов Ігор 
+def main():
     try:
-        lastname = input("Введіть прізвище: ").strip()
-        question = input("Введіть питання з Python: ").strip()
+        lastname = "Аксьонов"  # Фіксоване прізвище першого студента
+
+        next_question = (
+            "Питання для наступного студента:\n"
+            "Як у Python відкрити і прочитати файл?\n"
+        )
+        
         with open("students.txt", "w", encoding="utf-8") as f:
             f.write(f"Прізвище: {lastname}\n")
-            f.write(f"Питання: {question}\n")
-            f.write("Відповідь:\n")
+            f.write(next_question)
             f.write("---\n")
         print("Файл успішно створено.")
     except Exception as e:
         print("Сталася помилка при роботі з файлом:", e)
+
         
 
 def append_second_student(): # Денисенко Сергій
