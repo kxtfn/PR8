@@ -87,7 +87,53 @@ def append_third_student(): # Лихацький Денис
     except Exception as e:
         print(f"Помилка: Сталася невідома помилка при дописуванні даних 3-го студента: {e}")
 
+def append_fourth_student():  # Іващенко Нікіта
+    filename = "students.txt"
+    fourth_lastname = "Іващенко"
+
+    answer_lines = [
+        "Відповідь на питання третього студента:\n",
+        "Різниця між append() та extend() у Python полягає в тому, як саме вони додають елементи до списку.\n",
+        "append():\n",
+        " 1. Додає один елемент у список.\n",
+        " 2. Якщо передати список — він буде доданий як один елемент (вкладений список).\n",
+        "extend():\n",
+        " 1. Додає кожен елемент з переданого iterable окремо.\n",
+        ' 2. Не створює вкладений список — "розгортає" елементи.\n',
+    ]
+
+    next_question = (
+        "Питання для наступного студента:\n"
+        "Що означає *args, **kwargs та як вони використовуються?\n"
+        "Відповідь:\n"
+    )
+
+    try:
+        with open(filename, "a", encoding="utf-8") as f:
+            f.write(f"Прізвище: {fourth_lastname}\n")
+            for line in answer_lines:
+                f.write(line)
+
+            f.write(next_question)
+            f.write("---\n")
+
+        print("Відповідь та питання четвертого студента успішно передані у файл.")
+
+    except (OSError, PermissionError) as e:
+        print(f"Attention!: Помилка запису тексту у файл '{filename}'. {e}")
+    except Exception as e:
+        print(f"Attention!: Помилка при виконанні запиту на запис даних 4-го студента: {e}")
+
+
+
+
+
+
+
+
+
 if __name__ == "__main__":
     main()
     append_second_student()
     append_third_student()
+    append_fourth_student()
